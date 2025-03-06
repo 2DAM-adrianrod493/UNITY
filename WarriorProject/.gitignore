@@ -1,0 +1,11 @@
+# .gitignore para Unity
+/Library/
+/Temp/
+/Obj/
+/Build/
+/Builds/
+/UserSettings/
+*.csproj
+*.unityproj
+*.sln
+*.user
