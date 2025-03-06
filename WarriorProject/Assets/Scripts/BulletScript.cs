@@ -7,18 +7,20 @@ public class BulletScript : MonoBehaviour
     public float Speed;
     public AudioClip Sound;
 
-    private Rigidbody2D Rigidbody2D;
+    private Rigidbody2D rb2D;
     private Vector3 Direction;
 
     private void Start()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
+        // Sonido Disparo
         Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
     }
 
     private void FixedUpdate()
     {
-        Rigidbody2D.linearVelocity = Direction * Speed; // Corregimos de 'linearVelocity' a 'velocity' para mejor manejo
+        // Movemos la bala en el sentido que queremos
+        rb2D.linearVelocity = Direction * Speed;
     }
 
     public void SetDirection(Vector3 direction)
@@ -33,20 +35,20 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Comprobamos si la bala colisiona con el Warrior o el Enemy
-        WarriorController warrior = other.GetComponent<WarriorController>();
-        Enemy enemy = other.GetComponent<Enemy>();
+        // Ignoramos al enemigo como colisión
+        if (other.GetComponent<Enemy>() != null)
+        {
+            return;
+        }
 
+        // Daño a nuestro Warrior si colisiona con él
+        WarriorController warrior = other.GetComponent<WarriorController>();
         if (warrior != null)
         {
-            warrior.TakeDamage(1);  // Llama al m�todo para hacerle da�o al Warrior
+            warrior.Hit();
         }
 
-        if (enemy != null)
-        {
-            enemy.Hit();  // Llama al m�todo para hacerle da�o al Enemy
-        }
-
-        DestroyBullet(); // Destruir la bala al colisionar
+        // Destruimos la bala al colisionar con cualquier objeto
+        DestroyBullet();
     }
 }

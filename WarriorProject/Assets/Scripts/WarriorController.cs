@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class WarriorController : MonoBehaviour
@@ -15,10 +14,9 @@ public class WarriorController : MonoBehaviour
     private bool atacando;
 
     [Header("Salud")]
-    public int maxHealth = 100;
+    public int maxHealth = 20;
     private int currentHealth;
-
-    private int Health = 100;
+    private bool isDead = false; // Bandera para saber si el Warrior está muerto
 
     void Start()
     {
@@ -27,31 +25,29 @@ public class WarriorController : MonoBehaviour
         currentHealth = maxHealth;
 
         if (rb == null)
-        {
             Debug.LogError("El componente Rigidbody2D no está asignado en el Warrior.");
-        }
         if (animator == null)
-        {
             Debug.LogError("El componente Animator no está asignado en el Warrior.");
-        }
     }
 
     void Update()
     {
-        // Movimiento horizontal
+        if (isDead) return; // No se procesa nada si el Warrior ha muerto
+
+        // Movimiento Horizontal
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        // Ajustar dirección según el movimiento
+        // Ajustamos la dirección dependiendo de donde nos movamos
         if (horizontal < 0f)
             transform.localScale = new Vector3(-1f, 1f, 1f);
         else if (horizontal > 0f)
             transform.localScale = new Vector3(1f, 1f, 1f);
 
-        // Actualizar animaciones
+        // Actualizamos las Animaciones
         animator.SetBool("Running", horizontal != 0f);
         animator.SetBool("Atacando", atacando);
 
-        // Detectar suelo usando un Raycast
+        // Detectamos el suelo para el salto con un Raycast
         grounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f);
 
         // Salto
@@ -61,11 +57,11 @@ public class WarriorController : MonoBehaviour
         // Ataque
         if (Input.GetKeyDown(KeyCode.Z) && !atacando && grounded)
             Atacar();
-
     }
 
     void FixedUpdate()
     {
+        if (isDead) return; // Evitar movimiento si está muerto
         rb.linearVelocity = new Vector2(horizontal * Speed, rb.linearVelocity.y);
     }
 
@@ -77,36 +73,43 @@ public class WarriorController : MonoBehaviour
     private void Atacar()
     {
         atacando = true;
-        // Aquí se activa la animación de ataque.
-        // Puedes usar un evento de animación para llamar a DesactivaAtaque()
-        // y/o para sincronizar el momento en que se aplique daño.
     }
 
-    // Este método puede llamarse desde la animación al finalizar el ataque
     public void DesactivaAtaque()
     {
         atacando = false;
     }
 
-    // Método para aplicar daño al Warrior
-    public void TakeDamage(int damage)
+    public void Hit()
     {
-        currentHealth -= damage;
-        Debug.Log("Salud del Warrior: " + currentHealth);
-        if (currentHealth <= 0)
+        if (isDead) return;  // Evita procesar daño si ya está muerto
+
+        currentHealth -= 1;
+        Debug.Log("Warrior Herido. Salud: " + currentHealth);
+
+        if (currentHealth > 0)
+        {
+            // Reproducir animación de daño
+            animator.SetTrigger("Hurt");
+        }
+        else
+        {
             Die();
+        }
     }
+
 
     private void Die()
     {
+        isDead = true;  // Marcamos al Warrior como muerto
         Debug.Log("¡El Warrior ha muerto!");
-        // Aquí puedes agregar animación de muerte, reiniciar la escena, etc.
-        gameObject.SetActive(false);
-    }
+        animator.SetTrigger("Die");
 
-    public void Hit()
-    {
-        Health -= 1;
-        if (Health == 0) Destroy(gameObject);
+        // Desactivamos la física para evitar movimientos
+        rb.simulated = false;
+
+        // Desactivamos otros componentes (por ejemplo, colliders) si es necesario
+        // o bien esperamos a que termine la animación y luego destruimos el objeto.
+        Destroy(gameObject, 1.5f); // Ajusta el tiempo según la duración de tu animación
     }
 }
