@@ -226,6 +226,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.5
+    functionName: ActivarHitbox
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 88666f87257199043b86f7db2c098eab, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.2
     functionName: DesactivaAtaque
     data: 

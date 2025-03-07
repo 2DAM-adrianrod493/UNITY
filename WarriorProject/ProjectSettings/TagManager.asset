@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Espada
+  - FallZone
+  - Warrior
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -12,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Warrior
+  - Enemigo
   - 
   - 
   - 

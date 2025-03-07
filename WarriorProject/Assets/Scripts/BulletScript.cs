@@ -41,6 +41,11 @@ public class BulletScript : MonoBehaviour
             return;
         }
 
+        if (other.GetComponent<EnemyFinal>() != null)
+        {
+            return;
+        }
+
         // Daño a nuestro Warrior si colisiona con él
         WarriorController warrior = other.GetComponent<WarriorController>();
         if (warrior != null)

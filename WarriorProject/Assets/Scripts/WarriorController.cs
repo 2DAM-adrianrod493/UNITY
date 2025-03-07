@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class WarriorController : MonoBehaviour
 {
@@ -13,26 +15,47 @@ public class WarriorController : MonoBehaviour
     private bool grounded;
     private bool atacando;
 
+    [Header("Sonido")]
+    public AudioClip swordAttackSound;
+    private AudioSource audioSource; 
+
+    [Header("Combate")]
+    public GameObject rangoEspada;
+    public int attackDamage = 2;
+
     [Header("Salud")]
     public int maxHealth = 20;
     private int currentHealth;
-    private bool isDead = false; // Bandera para saber si el Warrior está muerto
+    private bool isDead = false;
+
+    [Header("Caída")]
+    public Transform fallCheck;
+    public float fallThreshold = -10f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            Debug.LogError("No se encontró AudioSource en el Warrior");
 
-        if (rb == null)
-            Debug.LogError("El componente Rigidbody2D no está asignado en el Warrior.");
-        if (animator == null)
-            Debug.LogError("El componente Animator no está asignado en el Warrior.");
+
+        currentHealth = maxHealth;
+        rangoEspada.SetActive(false);
+
     }
+
 
     void Update()
     {
-        if (isDead) return; // No se procesa nada si el Warrior ha muerto
+        if (isDead) return;
+
+        // Verificamos si el Warrior se cae
+        if (transform.position.y < fallThreshold)
+        {
+            Die();
+        }
 
         // Movimiento Horizontal
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -61,7 +84,7 @@ public class WarriorController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead) return; // Evitar movimiento si está muerto
+        if (isDead) return;
         rb.linearVelocity = new Vector2(horizontal * Speed, rb.linearVelocity.y);
     }
 
@@ -73,23 +96,37 @@ public class WarriorController : MonoBehaviour
     private void Atacar()
     {
         atacando = true;
+        animator.SetBool("Atacando", true);
+
+        if (swordAttackSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(swordAttackSound, 0.3f);
+        }
+
+        ActivarHitbox();
     }
+
 
     public void DesactivaAtaque()
     {
         atacando = false;
+        animator.SetBool("Atacando", false);
+    }
+
+    public void ActivarHitbox()
+    {
+        rangoEspada.SetActive(true);
     }
 
     public void Hit()
     {
-        if (isDead) return;  // Evita procesar daño si ya está muerto
+        if (isDead) return;
 
         currentHealth -= 1;
         Debug.Log("Warrior Herido. Salud: " + currentHealth);
 
         if (currentHealth > 0)
         {
-            // Reproducir animación de daño
             animator.SetTrigger("Hurt");
         }
         else
@@ -98,18 +135,32 @@ public class WarriorController : MonoBehaviour
         }
     }
 
-
     private void Die()
     {
-        isDead = true;  // Marcamos al Warrior como muerto
+        isDead = true;
         Debug.Log("¡El Warrior ha muerto!");
         animator.SetTrigger("Die");
 
-        // Desactivamos la física para evitar movimientos
-        rb.simulated = false;
 
-        // Desactivamos otros componentes (por ejemplo, colliders) si es necesario
-        // o bien esperamos a que termine la animación y luego destruimos el objeto.
-        Destroy(gameObject, 1.5f); // Ajusta el tiempo según la duración de tu animación
+        rb.simulated = false;
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0;
+
+        StartCoroutine(RestartGame());
     }
+
+    private IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("FallZone")) 
+        {
+            Die();
+        }
+    }
+
 }

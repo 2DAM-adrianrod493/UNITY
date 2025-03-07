@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\PROYECTOS\\UNITY\\WarriorProject\\",
+  "WorkspaceRootPath": "D:\\PROYECTOS\\UNITY\\WarriorProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|C:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|D:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\enemyfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|c:\\proyectos\\unity\\warriorproject\\assets\\scripts\\warriorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|D:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|D:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\warriorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\warriorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|C:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|D:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|d:\\proyectos\\unity\\warriorproject\\assets\\scripts\\chest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|D:\\PROYECTOS\\UNITY\\WarriorProject\\assets\\scripts\\swordattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32701C95-881F-71F9-12CB-CE5C91AB55AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\swordattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,42 +45,88 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Chest.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Chest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Chest.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Chest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Chest.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T21:41:00.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnemyFinal.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\EnemyFinal.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyFinal.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\EnemyFinal.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyFinal.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T19:52:21.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SwordAttack.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\SwordAttack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SwordAttack.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\SwordAttack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SwordAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T19:29:26.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAmwF0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T19:52:40.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BulletScript.cs",
-              "DocumentMoniker": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\BulletScript.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\BulletScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BulletScript.cs",
-              "ToolTip": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\BulletScript.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\BulletScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\BulletScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T03:41:53.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "WarriorController.cs",
-              "DocumentMoniker": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\WarriorController.cs",
+              "DocumentMoniker": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\WarriorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WarriorController.cs",
-              "ToolTip": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\WarriorController.cs",
+              "ToolTip": "D:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\WarriorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\WarriorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwIYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T03:07:34.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
-              "ToolTip": "C:\\PROYECTOS\\UNITY\\WarriorProject\\Assets\\Scripts\\Enemy.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvzcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T02:24:37.563Z",
               "EditorCaption": ""
             }
           ]
